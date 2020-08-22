@@ -1,0 +1,612 @@
+
+#Coding:utf-8
+jeu_charger = True
+print(""" 
+ _        ___      _       ____  ____   __ __  ____   ____  ____   ______  __ __    ___ 
+| |      /  _]    | |     /    ||    \ |  |  ||    \ |    ||    \ |      ||  |  |  /  _]
+| |     /  [_     | |    |  o  ||  o  )|  |  ||  D  ) |  | |  _  ||      ||  |  | /  [_ 
+| |___ |    _]    | |___ |     ||     ||  ~  ||    /  |  | |  |  ||_|  |_||  _  ||    _]
+|     ||   [_     |     ||  _  ||  O  ||___, ||    \  |  | |  |  |  |  |  |  |  ||   [_ 
+|     ||     |    |     ||  |  ||     ||     ||  .  \ |  | |  |  |  |  |  |  |  ||     |
+|_____||_____|    |_____||__|__||_____||____/ |__|\_||____||__|__|  |__|  |__|__||_____|            
+                     |--------------------------------------|
+                     |               BIENVENUE              |
+                     |           DANS LE JEU A WAWA         |
+                     |--------------------------------------|
+                     |       Le but du jeu vas être de se   |
+                     |   sortir du labyrinthe dans lequel   |
+                     |   vous venez d'apparaitre.           |
+                     |                                      |
+                     |       Mais attention! Se labyrinthe  |
+                     |   est rempli de monstre. soyez       |
+                     |   prudent! Et bonne chance!          |       """)
+input("""                     |--------------------------------------| 
+                                                     Version Finale :D
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    Pour lancer le jeu, appuyez sur entrée.""")
+
+print("""
+
+
+
+
+
+
+
+
+""")
+nom_joueur = input("""
+
+                    Tout d'abord, comment vous appelez vous ? 
+                                 --> """)
+print("""
+                    Trés bien, bonjour {}, heureux de vous connaitre!""".format(nom_joueur))
+input("""
+                                       ***********
+                                    ***** ***********
+                                 ** ****** *** ********
+                                ****  ******  ** *******
+                                ***     ******* ** ******
+                                ***       **        *  **
+                                 *|/------  -------\ ** *
+                                  |       |=|       :===**
+                                   |  O  |   | O   |  }|*
+                                    |---- |   ----  |  |*
+                                    |    |___       |\/
+                                    |              |
+                                    \   -----     |
+                                     \           |
+                                       -__ -- -/
+                                  
+                        Maintenant, a moi de me presenter. Je suis 
+                    une voix dans votre tête, vous êtes aveugle 
+                    (ça je pense que vous le savez deja) donc pour
+                    cette aventure je serait vos yeux. 
+                    
+                        Allez, commençons sans plus tardé...
+                        
+                        
+                                appuyez sur entrée. """)
+
+vie_joueur = 20
+attaque_joueur = 10
+
+print("""
+                    vous avez:
+                                {} points de vie
+                                {} points d'attaques""".format(vie_joueur, attaque_joueur))
+
+
+while jeu_charger:
+    print("""
+                                ______________
+                              |\ ___________ /|
+                              | |  /|,| |   | |
+                              | | |,x,| |   | |
+                              | | |,x,' |   | |
+                              | | |,x   ,   | |
+                              | | |/    |   | |
+                              | |    /] |   | |
+                              | |   [/ ()   | |
+                              | |       |   | |
+                              | |       |   | |
+                              | |       |   | |
+                              | |      ,'   | |
+                              | |   ,'      | |
+                              |_|,'_________|_|       ejm
+
+            
+                    Vous êtes dans une piece sombre, tout autour
+                    de vous il y as des murs en pierre, devant
+                    il y as une porte. En passant la porte, vous 
+                    pouvez allez a droite ou à gauche. """)
+    decision1 = input("""
+                    Ou voulez vous allez?
+                    -->""")
+    if decision1 == "droite":
+        print("""
+        
+        
+                    Vous etes dans un cul de sac! cependant je vois
+                    quelque chose briller au sol...""")
+        epe = input("""
+                    voulez vous l'examiner? 
+                    -->""")
+        if epe == "oui":
+            if attaque_joueur == 10:
+                attaque_joueur += 5
+                print("""       
+                                                            &&
+                                                            &&
+         __________________________________________________&&&&              &
+        /__________________________________________________&@@@@@@@@@@@@@@@@&&)
+        \__________________________________________________&@@@@@@@@@@@@@@@@&&)
+                                       `                   &&&&              &
+                                                            &&
+                                                            &&
+                    {}! Vous venez de trouver une épé!
+                    Vous gagnez +5 d'attaque! """.format(nom_joueur))
+                print("""
+                    Vous avez desormais:
+                                    - {} attaque
+                                    - {} vie""".format(attaque_joueur, vie_joueur))
+                print("""
+            
+                    Vous retournez dans la première piece!""")
+                epe_run = input("""
+                
+                    Appuyez sur entrée""")
+                continue
+            elif attaque_joueur == 15:
+                print("""
+        [̲̅̅L̲̅O̲̅L̲̅].................[̲̅̅L̲̅O̲̅L̲̅][̲̅̅L̲̅O̲̅L̲̅]..............[̲̅̅L̲̅O̲̅L̲̅]
+        [̲̅̅L̲̅O̲̅L̲̅]............[̲̅̅L̲̅O̲̅L̲̅]..........[̲̅̅L̲̅O̲̅L̲̅].........[̲̅̅L̲̅O̲̅L̲̅]
+        [̲̅̅L̲̅O̲̅L̲̅]............[̲̅̅L̲̅O̲̅L̲̅]..........[̲̅̅L̲̅O̲̅L̲̅].........[̲̅̅L̲̅O̲̅L̲̅]
+        [̲̅̅L̲̅O̲̅L̲̅]............[̲̅̅L̲̅O̲̅L̲̅]..........[̲̅̅L̲̅O̲̅L̲̅].........[̲̅̅L̲̅O̲̅L̲̅]
+        [̲̅̅L̲̅O̲̅L̲̅][̲̅̅L̲̅O̲̅L̲̅]........[̲̅̅L̲̅O̲̅L̲̅][̲̅̅L̲̅O̲̅L̲̅]............  [̲̅̅L̲̅O̲̅L̲̅][̲̅̅L̲̅O̲̅L̲̅]
+                
+                    Vous avez déja trouvé l'épé, petit malin !
+                    Vous perdez 2 point de vie pour tentative
+                    de cheat!""")
+                vie_joueur -= 2
+                continue
+            else:
+                print("""
+                    ooouuups, mauvaise commande""")
+                continue
+
+        elif epe == "non":
+            print("""
+            
+            
+                    Vous retournez dans la premiere piece""")
+            continue
+        else:
+            print("""
+            
+            
+                    OoOoOouuups! commande introuvable!""")
+            continue
+    elif decision1 == "gauche":
+        niveau2 = True
+        while niveau2:
+            print("""
+        _|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|
+        ___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|__
+        _|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|
+        ___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|__
+        _|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|
+        ___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|__
+        _|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|
+        ___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|__
+        _|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|
+        ___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|__
+        _|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|
+        ___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|__
+        _|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|
+                    
+                    Vous arrivez dans une grande pièce, à
+                    votre droite s'éttend un long couloir, 
+                    on dirait qu'il y as de la lumiere par
+                     là. a gauche il y as un petit 
+                    renfoncement assez sombre""")
+
+            decision2 = input("""
+            
+                    Voulez vous partir a droite en courant
+                    , pour voir si la lumière n'est pas la
+                    sortie? Ou voulez vous allez a gauche
+                    explorer ce petit renfoncement
+                    --->""")
+            if decision2 == "gauche":
+                monstre = input("""
+                                _......._
+                            .-'.'.'.'.'.'.`-.
+                          .'.'.'.'.'.'.'.'.'.`.
+                         /.'.'               '.\.
+                         |.'    _.--...--._     |
+                         \    `._.-.....-._.'   /
+                          |     _..- .-. -.._   |
+                       .-.'    `.   ((@))  .'   '.-.
+                      ( ^ \      `--.   .-'     / ^ )
+                       \  /         .   .       \  /
+                       /          .'     '.  .-    \.
+                      ( _.\    \ (_`-._.-'_)    /._\)
+                       `-' \   ' .--.          / `-'
+                           |  / /|_| `-._.'\   |
+                           |   |       |_| |   /-.._
+                       _..-\   `.--.______.'  |
+                            \       .....     |
+                             `.  .'      `.  /
+                               \           .'
+  LGB                           `-..___..-`
+  
+                    un monstre gigantesque se dresse devant
+                    vous, voulez vous l'affronter?
+                    -->""")
+                if monstre == "oui":
+                    print("""
+                    
+                
+                    waoow vous êtes courageux! je suis fière 
+                    d'être dans votre tête!""")
+                    if attaque_joueur >= 14:
+                        print("""
+                       ____                       _ 
+                      |  _ \                     | |
+                      | |_) |_ __ __ ___   _____ | |
+                      |  _ <| '__/ _` \ \ / / _ \| |
+                      | |_) | | | (_| |\ V / (_) |_|
+                      |____/|_|  \__,_| \_/ \___/(_)
+                    Grace a votre épé trouvé tout à
+                    l'heure, vous avez vaincu ce monstre !
+                    
+                    Par contre dans la bataille vous avez perdu:
+                    5 points de vie...""")
+                        vie_joueur -= 5
+                        print("""
+                    Vous avez desormais:
+                                        - {} attaque
+                                        - {} vie""".format(attaque_joueur, vie_joueur))
+
+                        print("""
+                    Oh mais que vois-je, derrière le monstre il y
+                    as un coffre! """)
+                        coffre = input("""
+                    voulez vous l'ouvrir ? 
+                    -->""")
+                        if vie_joueur <= 0:
+                            break
+                        if coffre == "oui":
+                            print("""
+                               _.-^^---....,,--       
+                           _--                  --_  
+                          <                        >)
+                          |                         | 
+                           \._                   _./  
+                              ```--. . , ; .--'''       
+                                    | |   |             
+                                 .-=||  | |=-.   
+                                 `-=#$%&%$#=-'   
+                                    | ;  :|     
+                           _____.,-#%&$@%#&#~,._____
+                    Arf! le coffre etait pieger!!! il vous péte
+                    a la gueule!!! la curiosité est un vilain défaut...""")
+                            hft = input("""
+                    Appuyez sur entrée""")
+                            vie_joueur -= 5
+                            if vie_joueur <= 0:
+                                break
+                            print("""
+                    Vous avez désormais:
+                                        - {} attaque
+                                        - {} vie""".format(attaque_joueur, vie_joueur))
+                            print("""
+                    
+                    
+                    Retournons a la piece précédente! """)
+                            continue
+                        elif coffre == "non":
+                            print("""
+                        
+                        
+                    Bon trés bien... Alors retournons a la pièce précédente!""")
+                            continue
+                        else:
+                            print("""
+                        
+                        
+                        OoOoOooups , mauvaise commande ...""")
+                            continue
+
+                    else:
+                        print("""
+                    
+                    Faut pas jouer les super hero quand on as même pas d'épé
+                    vous prennez 10 points de dégâts! 
+                    Allé, je croit qu'on peut pas le battre ... Retournons a 
+                    la pieces precedente et fichons le camps... """)
+                        vie_joueur -= 10
+                        print("""
+                    Vous avez desormais:
+                                    - {} attaque
+                                    - {} vie""".format(attaque_joueur, vie_joueur))
+
+                        if vie_joueur <= 0:
+                            break
+                        continue
+
+            elif decision2 == "droite":
+                if vie_joueur <= 0:
+                    break
+                print("""
+                    
+                    
+                    vous courrez de toute vos forces après ces émotions fortes.
+                    On arrive devant une grande porte, c'est la sortie !!!!!
+                    vous pouvez etre fière de vous {}""".format(nom_joueur))
+                avance = input("""
+                                         ______
+                                      ,-' .  . `-.
+                                    ./ .  .  .  . \.
+                                    |_ .  .  .  .  |
+                                    )| .  |##|  .  |
+                                    |" .  |##|  _  |
+                                    |  .  .  . (_) (
+                                    |_ .  .  .  .  |
+                                    )| .  .  .  .  |
+                                    |" .  .  .  .  |
+                                    |  .  .  .  .  |
+                                    |______________|
+                
+                                   appuyez sur entrée  """)
+                print("""
+
+         
+                    Vous ouvrez la porte, et la .........
+                    une autre piece hahahahahaha! ce jeu est cruel hein?! 
+                    en plus vous vous êtes viander dans le couloir ...
+                    boulet ! vous venez de perdre 5 points de vie ...
+                    
+                    
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'               `$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$  
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$'                   `$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$'`$$$$$$$$$$$$$'`$$$$$$!                       !$$$$$$'`$$$$$$$$$$$$$'`$$$
+$$$$  $$$$$$$$$$$  $$$$$$$                         $$$$$$$  $$$$$$$$$$$  $$$$
+$$$$. `$' \. \$`  $$$$$$$!         TROLOLOL         !$$$$$$$  '$/ `/ `$' .$$$$
+$$$$$. !\  i  i .$$$$$$$$                           $$$$$$$$. i  i  /! .$$$$$
+$$$$$$   `--`--.$$$$$$$$$                           $$$$$$$$$.--'--'   $$$$$$
+$$$$$$L        `$$$$$^^$$                           $$^^$$$$$'        J$$$$$$
+$$$$$$$.   .'   ""~   $$$    $.                 .$  $$$   ~""   `.   .$$$$$$$
+$$$$$$$$.  ;      .e$$$$$!    $$.             .$$  !$$$$$e,      ;  .$$$$$$$$
+$$$$$$$$$   `.$$$$$$$$$$$$     $$$.         .$$$   $$$$$$$$$$$$.'   $$$$$$$$$
+$$$$$$$$    .$$$$$$$$$$$$$!     $$`$$$$$$$$'$$    !$$$$$$$$$$$$$.    $$$$$$$$
+$JT&yd$     $$$$$$$$$$$$$$$$.    $    $$    $   .$$$$$$$$$$$$$$$$     $by&TL$
+                                 $    $$    $
+                                 $.   $$   .$
+                                 `$        $'
+                                  `$$$$$$$$'
+                    """)
+                vie_joueur -= 5
+                print("""
+                    Vous avez desormais:
+                                        - {} attaque
+                                        - {} vie""".format(attaque_joueur, vie_joueur))
+                port = input(""" 
+                    Appuyez sur entrée""")
+
+
+                niveau3 = True
+                while niveau3:
+                    decision3 = input("""
+                                 
+            
+                    Bon reprenons notre serieux... on arrive dans une petite 
+                    piece avec un renfoncement vachement sombre et flippant 
+                    à droite. En face un couloir ou on ne distingue pas grand 
+                     chose de plus... 
+                     ou voulez vous allez ? en face / droite ?""")
+                    if decision3 == "droite":
+                        print("""
+                            ____...------------...____
+                       _.-"` /o/__ ____ __ __  __ \o\_`"-._
+                     .'     / /                    \ \     '.
+                     |=====/o/======================\o\=====|
+                     |____/_/________..____..________\_\____|
+                     /   _/ \_     <_o#\__/#o_>     _/ \_   \.
+                     \_________\####/_________\####/________/
+                      |===\!/========================\!/===|
+                      |   |=|          .---.         |=|   |
+                      |===|o|=========/     \========|o|===|
+                      |   | |         \() ()/        | |   |
+                      |===|o|======{'-.) A (.-'}=====|o|===|
+                      | __/ \__     '-.\   /.-'    __/ \__ |
+                      |==== .'.'^'.'.====|====.'.'^'.'.====|
+          jgs         |  _\o/   __  {.' __  '.} _   _\o/  _|
+                      `""""-""""""""""""""""""""""""""-""""`
+                        
+                    vous avancez dans la pénombre du renfoncement et 
+                    soudain vous distinguez un coffre """)
+                        coffre = input("""
+                    Voulez vous l'ouvrir ?
+                    -->""")
+                        if coffre == "oui":
+                            if vie_joueur <= 10:
+                                vie_joueur += 15
+                                print("""
+                                
+                                        [_ ]
+                                      .-'. '-.
+                                    ./:;/ _.-'\.
+                                     |:._   .-|
+                                     |:._     |
+                                     |:._     |
+                                     |:._     |
+                                     |:._     |
+                                     `-.____.-'  
+                    
+                    vous trouvez une potion de soin, vous gagnez 15 
+                    points de vie!!! """)
+                                print("""
+                    Vous avez desormais:
+                                        - {} attaque
+                                        - {} vie""".format(attaque_joueur, vie_joueur))
+                    
+                                print("""
+                    retournons dans la piece précédente""")
+                                continue
+                            else:
+                                print("""
+                            _.-^^---....,,--       
+                         _--                  --_  
+                       <                        >)
+                       |                         | 
+                        \._                   _./  
+                           ```--. . , ; .--'''       
+                                 | |   |             
+                              .-=||  | |=-.   
+                              `-=#$%&%$#=-'   
+                                 | ;  :|     
+                        _____.,-#%&$@%#&#~,._____
+                    la curiosité est un vilain défaut ...
+                    le coffre vous péte a la tronche !!!! 
+                    moins 30 points de vie ... :D """)
+                                vie_joueur -= 30
+                                break
+                        elif coffre == "non":
+                            continue
+
+                        else:
+                            print("""
+                            
+                            mauvaise commande...""")
+                            continue
+                    elif decision3 == "en face":
+                        print(""" 
+                        
+                              _                               _ _ 
+                          ___| |_    _ __ _  _   __ _ ___  __| | |
+                         / _ \ ' \  | '  \ || | / _` / _ \/ _` |_|
+                         \___/_||_| |_|_|_\_, | \__, \___/\__,_(_)
+                                           |__/  |___/     
+                  .                                                      .
+                .n                   .                 .                  n.
+          .   .dP                  dP                   9b                 9b.    .
+         4    qXb         .       dX                     Xb       .        dXp     t
+        dX.    9Xb      .dXb    __                         __    dXb.     dXP     .Xb
+        9XXb._       _.dXXXXb dXXXXbo.                 .odXXXXb dXXXXb._       _.dXXP
+         9XXXXXXXXXXXXXXXXXXXVXXXXXXXXOo.           .oOXXXXXXXXVXXXXXXXXXXXXXXXXXXXP
+          `9XXXXXXXXXXXXXXXXXXXXX'~   ~`OOO8b   d8OOO'~   ~`XXXXXXXXXXXXXXXXXXXXXP'
+            `9XXXXXXXXXXXP' `9XX'   DIE    `98v8P'  HUMAN   `XXP' `9XXXXXXXXXXXP'
+                ~~~~~~~       9X.          .db|db.          .XP       ~~~~~~~
+                                )b.  .dbo.dP'`v'`9b.odb.  .dX(
+                              ,dXXXXXXXXXXXb     dXXXXXXXXXXXb.
+                             dXXXXXXXXXXXP'   .   `9XXXXXXXXXXXb
+                            dXXXXXXXXXXXXb   d|b   dXXXXXXXXXXXXb
+                            9XXb'   `XXXXXb.dX|Xb.dXXXXX'   `dXXP
+                             `'      9XXXXXX(   )XXXXXXP      `'
+                                      XXXX X.`v'.X XXXX
+                                      XP^X'`b   d'`X^XX
+                                      X. 9  `   '  P )X
+                                      `b  `       '  d'
+                                       `             '
+        
+                    Vous tombez sur le boss final! vous n'avez pas le 
+                    choix de l'affronter... Vous êtes prêt a l'affronter?
+                    
+                    en fait c'est pas vraiment une question ...""")
+                        dess = input("""
+                    contente toi juste d'appuyer sur entrée -->""")
+                        if attaque_joueur == 15 and vie_joueur == 20:
+                            print("""
+                   __     _ _      _ _        _   _             _ 
+                  / _|   | (_)    (_) |      | | (_)           | |
+                  | |_ ___| |_  ___ _| |_ __ _| |_ _  ___  _ __ | |
+                  |  _/ _ \ | |/ __| | __/ _` | __| |/ _ \| '_ \| |
+                  | ||  __/ | | (__| | || (_| | |_| | (_) | | | |_|
+                  |_| \___|_|_|\___|_|\__\__,_|\__|_|\___/|_| |_(_)
+                            
+                    Wooooooooooooooooo!!!!! 
+                    Pooo Pooo Pooooooooooooooh!!!!
+                    Mais quel combat!!! C'etait epique ! 
+                    Tu as vraiment gagner ta liberté. Une grande porte se 
+                    presente devant toi, c'est la sortie! 
+                    ( la vraie cette fois :D  )""")
+                            fin = input("""
+                            
+                    appuie sur entrée.""")
+                            break
+
+                        else:
+                            print("""
+                            
+                            
+                    tu n'as pas assez de skill pour tuer le boss.
+                    donc ... """)
+                            vie_joueur -= 30
+                            break
+                    else:
+                        print("""
+                    ooouups! mauvaise commande!""")
+                        continue
+
+                break
+    else:
+        print("""
+                    oooooups! mauvaise commande!""")
+        continue
+    break
+if vie_joueur >= 1:
+    print(""" 
+
+
+                    Vous êtes enfin dehors ! 
+                    vous respirez l'air bien frai qui vous avait tant manquer...
+                    
+                    
+                    {} vous terminez le jeu avec {} points de vie et {} points d'attaques.
+                    
+                       ____                       _   _                      
+                      |  _ \                     | | | |                     
+                      | |_) |_ __ __ ___   _____ | | | |_ _   _    __ _ ___  
+                      |  _ <| '__/ _` \ \ / / _ \| | | __| | | |  / _` / __| 
+                      | |_) | | | (_| |\ V / (_) |_| | |_| |_| | | (_| \__ \ 
+                      |____/|_|_ \__,_|_\_/_\___/(_)  \__|\__,_|  \__,_|___/ 
+                         / _(_)     (_) | |        (_)          | |        
+                        | |_ _ _ __  _  | | ___     _  ___ _   _| |        
+                        |  _| | '_ \| | | |/ _ \   | |/ _ \ | | | |        
+                        | | | | | | | | | |  __/   | |  __/ |_| |_|        
+                        |_| |_|_| |_|_| |_|\___|   | |\___|\__,_(_)        
+                                                  _/ |                     
+                                                  |__/           
+                                      (et c'est pas une mince affaire) 
+                                      
+                                       Merci d'avoir joué a ce jeu.""".format(nom_joueur, vie_joueur, attaque_joueur))
+    print("                                                                         Created by Nnawre")
+
+else:
+    print("""
+                              @@@@@                                        @@@@@
+                             @@@@@@@                                      @@@@@@@
+                             @@@@@@@           @@@@@@@@@@@@@@@            @@@@@@@
+                              @@@@@@@@       @@@@@@@@@@@@@@@@@@@        @@@@@@@@
+                                  @@@@@     @@@@@@@@@@@@@@@@@@@@@     @@@@@
+                                    @@@@@  @@@@@@@@@@@@@@@@@@@@@@@  @@@@@
+                                      @@  @@@@@@@@@@@@@@@@@@@@@@@@@  @@
+                                         @@@@@@@    @@@@@@    @@@@@@
+                                         @@@@@@      @@@@      @@@@@
+                                         @@@@@@      @@@@      @@@@@
+                                          @@@@@@    @@@@@@    @@@@@
+                                           @@@@@@@@@@@  @@@@@@@@@@
+                                            @@@@@@@@@@  @@@@@@@@@
+                                         @@   @@@@@@@@@@@@@@@@@   @@
+                                        @@@@  @@@@ @ @ @ @ @@@@  @@@@
+                                       @@@@@   @@@ @ @ @ @ @@@   @@@@@
+                                     @@@@@      @@@@@@@@@@@@@      @@@@@
+                                   @@@@          @@@@@@@@@@@          @@@@
+                                @@@@@              @@@@@@@              @@@@@
+                               @@@@@@@                                 @@@@@@@
+                                @@@@@                                   @@@@@
+                   _   _                        _                                   _   
+                  | | | |                      | |                                 | |  
+                  | | | | ___  _   _ ___    ___| |_ ___  ___   _ __ ___   ___  _ __| |_ 
+                  | | | |/ _ \| | | / __|  / _ \ __/ _ \/ __| | '_ ` _ \ / _ \| '__| __|
+                  \ \_/ / (_) | |_| \__ \ |  __/ ||  __/\__ \ | | | | | | (_) | |  | |_ 
+                   \___/ \___/ \__,_|___/  \___|\__\___||___/ |_| |_| |_|\___/|_|   \__|
+                                                                      
+                                                
+                                            Vous pouvez recommencer hein, 
+                                            c'est un jeu, pas la vrai vie...""")
+    print("""
+                        {} vous perdez le jeu avec {} points de vie et {} points d'attaques.
+                                       Merci d'avoir joué a ce jeu.""".format(nom_joueur, vie_joueur, attaque_joueur))
+    print("                                                                         Created by Nnawre")
+
+
